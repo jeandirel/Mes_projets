@@ -1,0 +1,27 @@
+/* Styles pour tablette (écrans moyens) */
+h1 {
+    font-size: 2rem;
+}
+.welcome-text {
+    font-size: 1rem;
+    padding: 10px;
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+.chat-container {
+    width: 90%;
+    height: 70vh;
+}
+iframe {
+    height: 100%;
+}
+.close-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+footer {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}

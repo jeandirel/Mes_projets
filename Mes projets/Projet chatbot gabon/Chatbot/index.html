@@ -1,0 +1,539 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot ANBG</title>
+    <style>
+        /* Style pour la page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,128,0,0.6), rgba(255,215,0,0.6), rgba(0,0,255,0.6));
+            background-size: cover;
+        }
+
+        h1 {
+            color: #1f3a64;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            width: 80%;
+            max-width: 800px;
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 0px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: absolute; /* Position absolute to hide it initially */
+            visibility: hidden; /* Hide it initially */
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        /* Style pour le bouton */
+        .welcome-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .welcome-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Style pour le footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot ANBG</h1>
+
+    <p class="welcome-text">
+        Je suis là pour vous guider dans votre démarche de demande de bourse !  
+        Vous avez des questions sur les critères d'éligibilité, les documents à fournir, ou les dates importantes ?  
+        Cliquez ci-dessous pour commencer et obtenir toutes les informations nécessaires pour réussir votre demande.  
+        Ensemble, facilitons votre parcours vers la bourse !
+    </p>
+
+    <button class="welcome-btn" onclick="openChat()">Démarrer la conversation</button>
+    
+    <div class="container" id="chat-container">
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/wOgqR4JNzZbONRefovC2j"
+            width="100%"
+            style="height: 100%; min-height: 700px"
+            frameborder="0"
+        ></iframe>
+    </div>
+
+    <footer>
+        <p>Chatbot ANBG - By Students</p>
+    </footer>
+
+    <script>
+        function openChat() {
+            const chatContainer = document.getElementById("chat-container");
+            chatContainer.style.visibility = "visible";
+            chatContainer.style.position = "relative";
+            document.querySelector(".welcome-btn").style.display = "none";
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot ANBG</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,128,0,0.6), rgba(255,215,0,0.6), rgba(0,0,255,0.6));
+            background-size: cover;
+        }
+
+        h1 {
+            color: #1f3a64;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            width: 80%;
+            max-width: 800px;
+            font-size: 1rem; /* Diminution de la taille du texte */
+            color: #fff;
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        /* Bouton principal */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Conteneur du chatbot */
+        .chat-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: center; /* Centrer le contenu du chatbot */
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        /* Bouton de fermeture */
+        .close-btn {
+            background-color: red;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            align-self: flex-end;
+            color: white;
+            border: none;
+        }
+
+        .close-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 5px;
+            text-align: center; /* Centrer le texte dans le footer */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot ANBG</h1>
+
+    <p class="welcome-text">
+        Bienvenue sur le Chatbot ANBG. Obtenez instantanément des réponses sur les critères d’éligibilité, 
+        les documents requis et les échéances pour votre demande de bourse. Cliquez ci-dessous pour démarrer et optimiser votre démarche.
+    </p>
+
+    <!-- Bouton pour ouvrir le chatbot -->
+    <!-- <button class="btn" id="open-chat-btn" onclick="openChat()">Démarrer la conversation</button> -->
+
+    <!-- Conteneur du chatbot (caché au départ) -->
+     <!--<div class="chat-container" id="chat-container">
+        <button class="close-btn" onclick="closeChat()">Fermer</button>
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/wOgqR4JNzZbONRefovC2j"
+            frameborder="0"
+        ></iframe>
+    </div>
+
+    <footer>
+        <p>Chatbot ANBG - By Students</p>
+    </footer>
+
+    <script>
+        function openChat() {
+            document.getElementById("chat-container").style.display = "flex";
+            document.getElementById("open-chat-btn").style.display = "none"; // Cacher le bouton
+        }
+
+        function closeChat() {
+            document.getElementById("chat-container").style.display = "none";
+            document.getElementById("open-chat-btn").style.display = "block"; // Réafficher le bouton
+        }
+    </script>
+
+    <script>
+        (function(){
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(args);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "wOgqR4JNzZbONRefovC2j";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot ANBG</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,128,0,0.6), rgba(255,215,0,0.6), rgba(0,0,255,0.6));
+            background-size: cover;
+        }
+
+        h1 {
+            color: #1f3a64;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            width: 80%;
+            max-width: 800px;
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        /* Bouton principal */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Conteneur du chatbot */
+        .chat-container {
+            width: 80%;
+            max-width: 800px;
+            height: 500vh; /* Augmenter la hauteur du conteneur */
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            margin-bottom: 70px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%; /* Occuper toute la hauteur du conteneur */
+            border: none;
+        }
+
+        /* Bouton de fermeture */
+        .close-btn {
+            background-color: red;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            align-self: flex-end;
+            color: white;
+            border: none;
+        }
+
+        .close-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0px;
+            font-size: 0.9rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .welcome-text {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .chat-container {
+                width: 90%;
+                height: 70vh; /* Ajuster la hauteur pour les petits écrans */
+            }
+            iframe {
+                height: 100%;
+            }
+            .close-btn {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+            footer {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .welcome-text {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            .chat-container {
+                width: 100%;
+                height: 60vh; /* Ajuster la hauteur pour les très petits écrans */
+            }
+            iframe {
+                height: 100%;
+            }
+            .close-btn {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
+            footer {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot ANBG</h1>
+
+    <p class="welcome-text">
+        Bienvenue sur le Chatbot ANBG. Obtenez instantanément des réponses sur les critères d’éligibilité, 
+        les documents requis et les échéances pour votre demande de bourse. Cliquez ci-dessous pour démarrer et optimiser votre démarche.
+    </p>
+
+    <!-- Bouton pour ouvrir le chatbot -->
+    <button class="btn" id="open-chat-btn" onclick="openChat()">Démarrer la conversation</button>
+
+    <!-- Conteneur du chatbot (caché au départ) -->
+    <div class="chat-container" id="chat-container">
+        <button class="close-btn" onclick="closeChat()">Fermer</button>
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/wOgqR4JNzZbONRefovC2j"
+            frameborder="0"
+        ></iframe>
+    </div>
+
+    <footer>
+        <p>Chatbot ANBG - par <strong>Jean Direl</strong> <mark>Ingénieur IA Junior</mark></p>
+    </footer>
+
+    <script>
+        function openChat() {
+            document.getElementById("chat-container").style.display = "flex";
+            document.getElementById("open-chat-btn").style.display = "none"; // Cacher le bouton
+        }
+
+        function closeChat() {
+            document.getElementById("chat-container").style.display = "none";
+            document.getElementById("open-chat-btn").style.display = "block"; // Réafficher le bouton
+        }
+    </script>
+
+    <script>
+        (function(){
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(args);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "wOgqR4JNzZbONRefovC2j";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+</body>
+</html>
